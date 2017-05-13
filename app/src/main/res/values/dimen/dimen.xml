@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Text Padding-->
+    <string name="paddingTop">15dp</string>
+    <string name="paddingLeft">15dp</string>
+    <string name="paddingRight">15dp</string>
+    <string name="paddingBottom">15dp</string>
+
+
+    <string name="marginTop">100dp</string>
+
+    <!--Text Size-->
+    <string name="size1">15sp</string>
+
+</resources>
