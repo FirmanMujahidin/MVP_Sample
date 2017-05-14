@@ -6,4 +6,7 @@
     <dimen name="layout_marginTop">10dp</dimen>
     <dimen name="layout_marginBottom">83dp</dimen>
 
+    <dimen name="layout_marginStart">143dp</dimen>
+    <dimen name="layout">18dp</dimen>
+
 </resources>

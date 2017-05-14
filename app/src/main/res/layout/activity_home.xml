@@ -10,8 +10,22 @@
     <TextView
         android:id="@+id/mTextUsername"
         android:layout_width="wrap_content"
-        android:paddingTop="@dimen/paddingTop"
         android:layout_height="wrap_content"
         android:text="@string/hello_user"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/layout_marginStart"
+        android:layout_marginTop="@dimen/layout" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/mTextUsername"
+        android:layout_marginTop="32dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+
 </RelativeLayout>
