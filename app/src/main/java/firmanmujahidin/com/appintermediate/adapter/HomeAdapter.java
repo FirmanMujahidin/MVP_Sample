@@ -33,12 +33,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(HomeAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(HomeAdapter.ViewHolder holder, final int position) {
         HomeModel homeModel = mHomeModel.get(position);
         holder.textView1.setText(homeModel.getNama());
         holder.textView2.setText(homeModel.getAlamat());
         holder.textView3.setText(homeModel.getEmail());
-        holder.textView4.setText(homeModel.getNoTelp());
+        holder.textView4.setText(homeModel.getNo());
 
     }
 

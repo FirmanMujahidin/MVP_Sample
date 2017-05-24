@@ -13,6 +13,6 @@ import retrofit2.http.GET;
 public interface ServiceApi {
     String END_POINT = "questions";
 
-    @GET(END_POINT)
+    @GET("questions")
     Call<List<ExampleRetro>>getData();
 }

@@ -1,15 +1,13 @@
-package firmanmujahidin.com.appintermediate.mainHome;
+package firmanmujahidin.com.appintermediate.mainDetail;
 
 import android.content.Context;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import firmanmujahidin.com.appintermediate.R;
-import firmanmujahidin.com.appintermediate.intreractor.HomeInterfaceData;
+import firmanmujahidin.com.appintermediate.intreractor.DetailIntereface;
 import firmanmujahidin.com.appintermediate.model.ExampleRetro;
-import firmanmujahidin.com.appintermediate.model.HomeModel;
 import firmanmujahidin.com.appintermediate.service.ServiceApi;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,32 +16,24 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by firma on 14-May-17.
+ * Created by rezab on 15/05/2017.
  */
 
-public class HomePresenter implements HomeInterfaceData{
+public class DetailInterefacePresenter implements DetailIntereface {
 
-    private Context mContext;
-    private HomeActivity mHomeInterface;
-    private ArrayList<HomeModel> mHomeModel;
+    private firmanmujahidin.com.appintermediate.mainHome.HomeInterfaceActivity HomeInterfaceActivity;
     private List<ExampleRetro> mExampleRetros;
+    private Context mContext;
     private static final String BASE_URL = "https://private-4e4159-qurrata.apiary-mock.com/";
+    private String ids;
 
-    public HomePresenter(HomeActivity mHomenterface, Context mContext) {
-        this.mHomeInterface = mHomenterface;
+    public DetailInterefacePresenter(DetailActivity homeInterfaceActivity, Context mContext) {
+        HomeInterfaceActivity = (firmanmujahidin.com.appintermediate.mainHome.HomeInterfaceActivity) homeInterfaceActivity;
         this.mContext = mContext;
     }
-
-    public HomePresenter(Context mContext) {
-        this.mContext = mContext;
-    }
-
     @Override
-    public void showList(ArrayList<HomeModel> homeModels) {
-        mHomeModel = homeModels;
-    }
-
-    public void getData(){
+    public void getDataInfo(String id) {
+        final String ids = id;
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -55,13 +45,11 @@ public class HomePresenter implements HomeInterfaceData{
             @Override
             public void onResponse(Call<List<ExampleRetro>> call, Response<List<ExampleRetro>> response) {
                 mExampleRetros = response.body();
-                for (int i = 0; i < mExampleRetros.size() ; i++) {
-                    String judul = mExampleRetros.get(i).getJudul();
-                    String tipe = mExampleRetros.get(i).getTentang();
-                    String isi = mExampleRetros.get(i).getIsi();
-                    mHomeModel.add(new HomeModel(judul,"Genre :"+tipe," Deskripsi :",isi));
-                }
-                mHomeInterface.initView();
+                String judul = mExampleRetros.get(Integer.parseInt(ids)).getJudul();
+                String tipe = mExampleRetros.get(Integer.parseInt(ids)).getTentang();
+                String isia = mExampleRetros.get(Integer.parseInt(ids)).getIsi();
+                HomeInterfaceActivity.setinfo(judul,"\n Tipe : "+tipe+" \n Isi : "+isia);
+
             }
 
             @Override
@@ -70,5 +58,4 @@ public class HomePresenter implements HomeInterfaceData{
             }
         });
     }
-
 }

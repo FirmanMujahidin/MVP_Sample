@@ -8,7 +8,7 @@
     android:layout_marginTop="@dimen/layout_marginTop"
     android:layout_margin="@dimen/layout_margin"
     android:paddingTop="@dimen/paddingTop"
-    tools:context="firmanmujahidin.com.appintermediate.mainview.MainActivity">
+    tools:context="firmanmujahidin.com.appintermediate.mainLogin.LoginActivity">
 
 =       <EditText
             android:id="@+id/mTextUsername"

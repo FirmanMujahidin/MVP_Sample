@@ -5,17 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="firmanmujahidin.com.appintermediate.mainview.HomeActivity">
+    tools:context="firmanmujahidin.com.appintermediate.mainHome.HomeActivity">
 
     <TextView
-        android:id="@+id/mTextUsername"
+        android:id="@+id/mTVtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_user"
+        android:text="@string/list"
+        android:textSize="20sp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="@dimen/layout_marginStart"
-        android:layout_marginTop="@dimen/layout" />
+        android:layout_centerHorizontal="true" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecyclerView"

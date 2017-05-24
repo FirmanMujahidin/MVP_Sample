@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">App Intermediate</string>
+    <string name="app_name">Move21</string>
     <string name="app">Daftar List Peserta</string>
 
 
     <string name="user_name">User Name</string>
-    <string name="hello_user">Helo</string>
+    <string name="list">List Movie</string>
     <string name="password">Password</string>
     <string name="button">Login</string>
     <string name="register">Register</string>
@@ -18,4 +18,12 @@
     <!--Text Size-->
     <string name="size1">15sp</string>
 
+    <!-- GLOBAL -->
+    <string name="koneksierror">Tidak Dapat Tersambung Ke Server , Silahkan Cek Internet Anda</string>
+    <string name="loading">Loading Data ...</string>
+
+    <!-- LOGIN RESULT -->
+    <string name="loginsukses">Login Sukses ! Tunggu Sebentar</string>
+    <string name="logininvalid">Username / Password Salah !</string>
+    <string name="loginempty">Username / Password Kosong</string>
 </resources>

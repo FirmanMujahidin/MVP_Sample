@@ -6,47 +6,48 @@ package firmanmujahidin.com.appintermediate.model;
 
 public class HomeModel {
 
-    private String nama;
-    private String alamat;
-    private String email;
-    private String noTelp;
+    public String Nama;
+    public String Alamat;
+    public String Email;
+    public String no;
 
-    public HomeModel(String nama, String alamat, String email, String noTelp) {
-        this.nama = nama;
-        this.alamat = alamat;
-        this.email = email;
-        this.noTelp = noTelp;
+
+    public HomeModel(String nama, String alamat, String email, String no) {
+        Nama = nama;
+        Alamat = alamat;
+        Email = email;
+        this.no = no;
     }
 
     public String getNama() {
-        return nama;
+        return Nama;
     }
 
     public void setNama(String nama) {
-        this.nama = nama;
+        Nama = nama;
     }
 
     public String getAlamat() {
-        return alamat;
+        return Alamat;
     }
 
     public void setAlamat(String alamat) {
-        this.alamat = alamat;
+        Alamat = alamat;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
-    public String getNoTelp() {
-        return noTelp;
+    public String getNo() {
+        return no;
     }
 
-    public void setNoTelp(String noTelp) {
-        this.noTelp = noTelp;
+    public void setNo(String no) {
+        this.no = no;
     }
 }

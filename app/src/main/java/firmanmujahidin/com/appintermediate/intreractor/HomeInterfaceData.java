@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import firmanmujahidin.com.appintermediate.model.HomeModel;
 
 /**
- * Created by firma on 14-May-17.
+ * Created by firma on 18-May-17.
  */
 
-public interface HomeInterface {
-
-    void showList(ArrayList<HomeModel>homeModels);
+public interface HomeInterfaceData {
+    void showList(ArrayList<HomeModel> homeModels);
+    void getData();
 }

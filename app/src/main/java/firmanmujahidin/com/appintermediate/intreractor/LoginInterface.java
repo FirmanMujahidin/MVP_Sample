@@ -4,7 +4,7 @@ package firmanmujahidin.com.appintermediate.intreractor;
  * Created by firma on 13-May-17.
  */
 
-public interface InterfaceMain {
+public interface LoginInterface {
 
     void showError();
 
@@ -12,7 +12,7 @@ public interface InterfaceMain {
 
     void loginError();
 
-    void loginsuccess();
+    void loginsuccess(String username);
 
 
 

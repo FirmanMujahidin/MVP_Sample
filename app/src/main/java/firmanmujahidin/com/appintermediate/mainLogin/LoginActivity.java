@@ -1,4 +1,4 @@
-package firmanmujahidin.com.appintermediate.mainview;
+package firmanmujahidin.com.appintermediate.mainLogin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +9,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import firmanmujahidin.com.appintermediate.R;
-import firmanmujahidin.com.appintermediate.intreractor.InterfaceMain;
-import firmanmujahidin.com.appintermediate.intreractor.InterfacePresenter;
+import firmanmujahidin.com.appintermediate.intreractor.LoginInterface;
+import firmanmujahidin.com.appintermediate.mainHome.HomeActivity;
 
-public class MainActivity extends AppCompatActivity implements InterfaceMain {
+public class LoginActivity extends AppCompatActivity implements LoginInterface {
 
     private EditText mTxtusername;
     private EditText mTxtpassword;
     private Button mBtnLogin;
-    private InterfacePresenter mInterfacePresenter;
+    private LoinInterfacePresenter mLoinInterfacePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity implements InterfaceMain {
         mTxtpassword = (EditText) findViewById(R.id.mTextPassword);
         mBtnLogin = (Button) findViewById(R.id.mBtnLogin);
 
-        mInterfacePresenter = new  MainPresenter(this);
+        mLoinInterfacePresenter = new LoginPresenter(this);
 
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mInterfacePresenter.login(mTxtusername.getText().toString(),
+                mLoinInterfacePresenter.login(mTxtusername.getText().toString(),
                         mTxtpassword.getText().toString());
             }
         });
@@ -46,20 +46,22 @@ public class MainActivity extends AppCompatActivity implements InterfaceMain {
 
     @Override
     public void massageError() {
-        Toast.makeText(this,"Username atau Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,R.string.logininvalid, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void loginError() {
-        Toast.makeText(this,"Username atau Password salah", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,R.string.loginempty, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void loginsuccess() {
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-        intent.putExtra("username", mTxtusername.getText().toString());
+    public void loginsuccess(String username) {
+        Toast.makeText(this, R.string.loginsukses, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this,HomeActivity.class);
+        intent.putExtra("username",username);
         startActivity(intent);
-        Toast.makeText(this,"Login Berhasil", Toast.LENGTH_SHORT).show();
+
     }
+
 
 }
